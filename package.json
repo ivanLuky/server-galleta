@@ -1,0 +1,19 @@
+{
+  "name": "server-galleta",
+  "version": "0.0.0",
+  "description": "server en node",
+  "main": "server.js",
+  "scripts": {
+    "test": "static script "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanLuky/server-galleta.git"
+  },
+  "author": "ivan999art@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanLuky/server-galleta/issues"
+  },
+  "homepage": "https://github.com/ivanLuky/server-galleta#readme"
+}
