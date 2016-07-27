@@ -7,7 +7,9 @@ var mongoClient = mongodb.MongoClient;
 module.exports = {
     "getFortune" : function(cb){
         // Conectando el cliente a la base de datos fortune
-        mongoClient.connect("mongodb://127.0.0.1:27017/fortune",
+        var connectionString = 
+        "mongodb://Diamon:chikis321@ds060478.mlab.com:60478/fortune"
+        mongoClient.connect(connectionString,
         function(err, db){
             if(err){
                 console.log("> ERROR al conectarse a" +
@@ -18,14 +20,6 @@ module.exports = {
                     "La honestidad es un regalo caro, no lo esperes de gente barata"
     
             };
-
-             fortunePaper = Math.random() * fortunePaper.length
-                fortunePaper = Math.floor(fortunePaper)
-                var message = fortunePaper[fortunePaper];
-                var frase = {};
-                frase.message = message;
-                return frase;
-
                 // Convirtiendo el fortunePaper de objeto
                 // a su version en string
                 var fortunePaperResponse = JSON.stringify(fortunePaper);
@@ -44,8 +38,12 @@ module.exports = {
 
                 // Parseo el objeto resultado en un arreglo
                 objetoRestultado.toArray(function(err, papers){
-                    var fortunePaperResponse = 
-                    JSON.stringify(papers[0]);
+                    
+                     var frase =
+                     Math.round(Math.random() * papers.length);
+                     console.log(">RandomIndex calculated: " + frase);
+                     var fortunePaperResponse = 
+                     JSON.stringify(papers[frase]);
                     // Cerrar la conexion entre el cliente
                     // y la base de datos
                     db.close()
